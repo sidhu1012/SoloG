@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[13]:
+# In[ ]:
 
 
 import numpy as np
@@ -9,43 +9,46 @@ import pandas as pd
 import random as rn
 
 
-# In[29]:
+# In[ ]:
 
 
 def question_number(l,n):
     j=rn.randint(0,n-1)
     if j in l:
-        question(l)  #question not defined
+        question_number(l,n)  #error_maybe
     else:
         l.append(j)
     return(int(j))
 
 
-# In[30]:
+# In[ ]:
 
 
 def play(tries):
     pass
 
 
-# In[31]:
+# In[ ]:
 
 
 def show(q,tries):
     vowels=['a','e','i','o','u','A','E','I','O','U']
     for i in q:
-        if tries==0:
-            break #question screen function
+        if i in vowels:
+            print(f' {i}',end='')
+        elif i==' ':
+            print('/',end='')
         else:
-            if i not in q:
-                pass
+            print(' _',end='')
+    print()
+   # play() work in progress
                 
     
     
     
 
 
-# In[32]:
+# In[ ]:
 
 
 def game_play(tries,n,film):
@@ -54,12 +57,12 @@ def game_play(tries,n,film):
     for i in range(10):
         print(f'Quest.{i}')
         s=question_number(l,n)
-        quest =list(film[s])
+        quest =film[s][0]    # error
         show(quest,tries)
         
 
 
-# In[33]:
+# In[ ]:
 
 
 def hollywood_easy():
@@ -75,7 +78,7 @@ def hollywood_easy():
         
 
 
-# In[34]:
+# In[ ]:
 
 
 def hollywood_medium():
@@ -89,7 +92,7 @@ def hollywood_medium():
     
 
 
-# In[35]:
+# In[ ]:
 
 
 def hollywood_hard():
@@ -103,7 +106,8 @@ def hollywood_hard():
     
 
 
-# In[36]:
+# In[ ]:
+
 
 
 
