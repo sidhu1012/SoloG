@@ -37,7 +37,7 @@ def show(q,tries):
         if i in vowels:
             print(f' {i}',end='')
         elif i==' ':
-            print('/',end='')
+            print(' /',end='')
         else:
             print(' _',end='')
     print()
@@ -55,7 +55,7 @@ def game_play(tries,n,film):
     hints=3
     l=[]
     for i in range(10):
-        print(f'Quest.{i}')
+        print(f'Quest.{i+1}')
         s=question_number(l,n)
         quest =film[s][0]    # error
         show(quest,tries)
