@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[13]:
 
 
 import numpy as np
@@ -9,26 +9,26 @@ import pandas as pd
 import random as rn
 
 
-# In[4]:
+# In[29]:
 
 
 def question_number(l,n):
-    j=rn.randint(n)
+    j=rn.randint(0,n-1)
     if j in l:
-        question(l)
+        question(l)  #question not defined
     else:
         l.append(j)
     return(int(j))
 
 
-# In[ ]:
+# In[30]:
 
 
 def play(tries):
     pass
 
 
-# In[ ]:
+# In[31]:
 
 
 def show(q,tries):
@@ -45,21 +45,21 @@ def show(q,tries):
     
 
 
-# In[6]:
+# In[32]:
 
 
-def game_play(tries,n):
+def game_play(tries,n,film):
     hints=3
     l=[]
     for i in range(10):
         print(f'Quest.{i}')
         s=question_number(l,n)
-        quest =list(movie_name[s])
+        quest =list(film[s])
         show(quest,tries)
         
 
 
-# In[5]:
+# In[33]:
 
 
 def hollywood_easy():
@@ -69,13 +69,13 @@ def hollywood_easy():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(3,n)
+    game_play(3,n,movie_name)
     
 
         
 
 
-# In[ ]:
+# In[34]:
 
 
 def hollywood_medium():
@@ -85,11 +85,11 @@ def hollywood_medium():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(4,n)
+    game_play(4,n,movie_name)
     
 
 
-# In[1]:
+# In[35]:
 
 
 def hollywood_hard():
@@ -99,8 +99,14 @@ def hollywood_hard():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(5,n)
+    game_play(5,n,movie_name)
     
+
+
+# In[36]:
+
+
+hollywood_easy()
 
 
 # In[ ]:
