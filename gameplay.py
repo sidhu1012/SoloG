@@ -147,19 +147,7 @@ def bollywood_hard():
     game_play(5,n,movie_name)
 
 
-# In[15]:
 
-
-hollywood_easy()
-
-
-# In[16]:
-
-
-bollywood_easy()
-
-
-# In[ ]:
 
 
 
