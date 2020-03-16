@@ -106,7 +106,6 @@ def hollywood_hard():
 # In[36]:
 
 
-hollywood_easy()
 
 
 # In[ ]:
