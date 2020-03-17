@@ -19,7 +19,16 @@ def question_number(l,n):
         question_number(l,n) 
     else:
         l.append(j)
-    return(int(j))
+        return(int(j))
+
+
+# In[ ]:
+
+
+def hlp(h1,h2):
+    print()
+    print('Starcast:',h1)
+    print('Release:',h2)
 
 
 # In[ ]:
@@ -43,17 +52,18 @@ def play_show(q,out,check):
 # In[ ]:
 
 
-def play(q):
+def play(q,h1,h2):
     tries=5
     out=['a','e','i','o','u','A','E','I','O','U','/','-']
     print()
-
+    global h
+    flg=0
     while tries>0:
         check=[]
         print()
         print(f'Tries:{tries}')
         print(f'Hints:{h}')
-        print('score',score)
+        print('Score:',score)
         print()
         ans=input('INPUT:')
         if ans in q:
@@ -63,6 +73,19 @@ def play(q):
             exit()
         elif ans=='hm':
             pass #home function
+        elif ans=='hp':
+            if flg==0:
+                if h>0:
+                    hlp(h1,h2)
+                    h-=1
+                    flg+=1
+                    continue
+                else:
+                    print('Help finished')
+                    continue
+            else:
+                print('Help Already Used')
+                continue
         else:
             tries-=1
         play_show(q,out,check)
@@ -86,11 +109,15 @@ def play(q):
 # In[ ]:
 
 
-def show(q):
+def show(q,h1,h2):
     vowels=['a','e','i','o','u','A','E','I','O','U','/','-']
+    numb=[0,1,2,3,4,5,6,7,8,9]
+    num_count=0
     print()
     for i in q:
         time.sleep(0.5)
+        if i in numb:
+            num_count+=1
         if i in vowels:
             print(f' {i}',end='')
         elif i==' ':
@@ -98,7 +125,10 @@ def show(q):
         else:
             print(' _',end='')
     print()
-    play(q)
+    if num_count!=0:
+        print('It contains number [0-9]')
+        print()
+    play(q,h1,h2)
    
     
     
@@ -108,8 +138,9 @@ def show(q):
 # In[ ]:
 
 
-def game_play(n,film):
+def game_play(n,film,star,dt):
     l=[]
+    global score
     for i in range(10):
         print("Type 'hp' for hint")
         print("Type 'hm' to go home")
@@ -118,7 +149,7 @@ def game_play(n,film):
         print(f'Quest.{i+1}')
         s=question_number(l,n)
         quest =film[s][0]    
-        show(quest.lower())
+        show(quest.lower(),star[s][0],dt[s][0])
         score+=10
         
 
@@ -133,7 +164,7 @@ def hollywood_easy():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(n,movie_name)
+    game_play(n,movie_name,star_cast,release)
     hollywood_medium()
     
 
@@ -150,7 +181,7 @@ def hollywood_medium():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(n,movie_name)
+    game_play(n,movie_name,star_cast,release)
     hollywood_hard()
     
 
@@ -165,7 +196,7 @@ def hollywood_hard():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(n,movie_name)
+    game_play(n,movie_name,star_cast,release)
     #game finishded
     
 
@@ -180,7 +211,7 @@ def bollywood_easy():
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(n,movie_name)
+    game_play(n,movie_name,star_cast,release)
     bollywood_medium()
 
 
@@ -194,7 +225,7 @@ def bollywood_medium():
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(n,movie_name)
+    game_play(n,movie_name,star_cast,release)
     bollywood_hard()
 
 
@@ -208,15 +239,13 @@ def bollywood_hard():
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(n,movie_name)
+    game_play(n,movie_name,star_cast,release)
     #game finished()
 
 
 # In[ ]:
 
 
-global h
-global score
 h=3
 score=0
 
@@ -224,7 +253,7 @@ score=0
 # In[ ]:
 
 
-
+bollywood_easy()
 
 
 # In[ ]:
