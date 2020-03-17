@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import numpy as np
@@ -10,30 +10,85 @@ import random as rn
 import time
 
 
-# In[2]:
+# In[ ]:
 
 
 def question_number(l,n):
     j=rn.randint(0,n-1)
     if j in l:
-        question_number(l,n)  #error_maybe
+        question_number(l,n) 
     else:
         l.append(j)
     return(int(j))
 
 
-# In[3]:
+# In[ ]:
 
 
-def play(tries):
-    pass
+def play_show(q,out,check):
+    print()
+    for i in q:
+        if i in out:
+            print(f' {i}',end='')
+            check.append(i)
+        elif i==' ':
+            print(' /',end='')
+            check.append(i)
+        else:
+            print(' _',end='')
+    print()
+    print()
 
 
-# In[17]:
+# In[ ]:
 
 
-def show(q,tries):
+def play(q):
+    tries=5
+    out=['a','e','i','o','u','A','E','I','O','U','/','-']
+    print()
+
+    while tries>0:
+        check=[]
+        print()
+        print(f'Tries:{tries}')
+        print(f'Hints:{h}')
+        print('score',score)
+        print()
+        ans=input('INPUT:')
+        if ans in q:
+            if ans not in out:
+                out.append(ans)
+        elif ans=='qt':
+            exit()
+        elif ans=='hm':
+            pass #home function
+        else:
+            tries-=1
+        play_show(q,out,check)
+        if check==list(q):
+            break
+        #compare strings to break loop
+    if tries==0:
+        print("Out of tries")
+        print('You Loose')
+        print('Total Score:',score)
+        quit()
+        #home function
+        
+        
+        
+            
+            
+        
+
+
+# In[ ]:
+
+
+def show(q):
     vowels=['a','e','i','o','u','A','E','I','O','U','/','-']
+    print()
     for i in q:
         time.sleep(0.5)
         if i in vowels:
@@ -43,28 +98,32 @@ def show(q,tries):
         else:
             print(' _',end='')
     print()
-   # play() work in progress
-                
+    play(q)
+   
     
     
     
 
 
-# In[5]:
+# In[ ]:
 
 
-def game_play(tries,n,film):
-    hints=3
+def game_play(n,film):
     l=[]
     for i in range(10):
+        print("Type 'hp' for hint")
+        print("Type 'hm' to go home")
+        print("Type 'qt' to quit")
+        print()
         print(f'Quest.{i+1}')
         s=question_number(l,n)
-        quest =film[s][0]    # error
-        show(quest,tries)
+        quest =film[s][0]    
+        show(quest.lower())
+        score+=10
         
 
 
-# In[14]:
+# In[ ]:
 
 
 def hollywood_easy():
@@ -74,13 +133,14 @@ def hollywood_easy():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(4,n,movie_name)
+    game_play(n,movie_name)
+    hollywood_medium()
     
 
         
 
 
-# In[7]:
+# In[ ]:
 
 
 def hollywood_medium():
@@ -90,11 +150,12 @@ def hollywood_medium():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(4,n,movie_name)
+    game_play(n,movie_name)
+    hollywood_hard()
     
 
 
-# In[8]:
+# In[ ]:
 
 
 def hollywood_hard():
@@ -104,11 +165,12 @@ def hollywood_hard():
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(5,n,movie_name)
+    game_play(n,movie_name)
+    #game finishded
     
 
 
-# In[9]:
+# In[ ]:
 
 
 def bollywood_easy():
@@ -118,10 +180,11 @@ def bollywood_easy():
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(4,n,movie_name)
+    game_play(n,movie_name)
+    bollywood_medium()
 
 
-# In[10]:
+# In[ ]:
 
 
 def bollywood_medium():
@@ -131,10 +194,11 @@ def bollywood_medium():
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(4,n,movie_name)
+    game_play(n,movie_name)
+    bollywood_hard()
 
 
-# In[11]:
+# In[ ]:
 
 
 def bollywood_hard():
@@ -144,10 +208,38 @@ def bollywood_hard():
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
-    game_play(5,n,movie_name)
+    game_play(n,movie_name)
+    #game finished()
+
+
+# In[ ]:
+
+
+global h
+global score
+h=3
+score=0
+
+
+# In[ ]:
 
 
 
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
 
 
 
