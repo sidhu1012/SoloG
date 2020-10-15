@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: SoloG
+Version: 0.0.1
+Summary: A small example package
+Home-page: https://github.com/Overnight-Sensations/SoloG
+Author: Sudeep Sidhu
+Author-email: sudeepsidhu102@gmail.com
+License: UNKNOWN
+Description: Game
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=2.7
+Description-Content-Type: text/markdown

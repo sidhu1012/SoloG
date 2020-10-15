@@ -1,0 +1,6 @@
+README.md
+setup.py
+SoloG.egg-info/PKG-INFO
+SoloG.egg-info/SOURCES.txt
+SoloG.egg-info/dependency_links.txt
+SoloG.egg-info/top_level.txt
