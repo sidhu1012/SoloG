@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 #start
  
 users = {}
@@ -55,6 +52,7 @@ def newUser():
             users[createLogin]=createPassw
             print("\n User created")        
  
+
 def oldUser():
     login = input("Enter login name: ")
     passw = input("Enter password: ")
@@ -66,6 +64,8 @@ def oldUser():
  
 while status != "q":
     displayMenu()
+
+
 def logout():
     answer=input("Do you want to logout now? y/n?")
     if answer.lower().startswith("y"):
@@ -74,10 +74,3 @@ def logout():
     elif answer.lower().startswith("n"):
           print("ok, goodbye")
           exit()
-
-
-# In[ ]:
-
-
-
-

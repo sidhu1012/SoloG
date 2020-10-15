@@ -1,16 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 import numpy as np
 import pandas as pd
 import random as rn
 import time
-
-
-# In[ ]:
 
 
 def question_number(l,n):
@@ -22,16 +16,10 @@ def question_number(l,n):
         return(int(j))
 
 
-# In[ ]:
-
-
-def hlp(h1,h2):
+def help(h1,h2):
     print()
     print('Starcast:',h1)
     print('Release:',h2)
-
-
-# In[ ]:
 
 
 def play_show(q,out,check):
@@ -47,9 +35,6 @@ def play_show(q,out,check):
             print(' _',end='')
     print()
     print()
-
-
-# In[ ]:
 
 
 def play(q,h1,h2):
