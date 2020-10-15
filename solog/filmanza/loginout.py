@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
+from .menu import menu
 
-#start
- 
 users = {}
 status = ""
 count=0
@@ -15,15 +14,10 @@ def displayMenu():
         oldUser()
     elif status == "n":
         newUser()
-    
- 
-def newUser():
-    val=True
-    createLogin = input("Create login name: ")
- 
-    if createLogin in users:
-        print("\nLogin name already exist!\n")
-    else:
+    if status == "q":
+        exit()
+
+def newUser_password():
         createPassw = input("Create password: ")
         if len(createPassw) < 6: 
             print('length should be at least 6') 
@@ -51,7 +45,17 @@ def newUser():
         if val: 
             users[createLogin]=createPassw
             print("\n User created")        
+
+
+def newUser():
+    val=True
+    createLogin = input("Create login name: ")
  
+    if createLogin in users:
+        print("\nLogin name already exist!\n")
+        newUser()
+    newUser_password()
+
 
 def oldUser():
     login = input("Enter login name: ")
@@ -61,16 +65,13 @@ def oldUser():
         print("\nLogin successful!\n")
     else:
         print("\nUser doesn't exist or wrong password!\n")
- 
-while status != "q":
-    displayMenu()
 
 
 def logout():
     answer=input("Do you want to logout now? y/n?")
     if answer.lower().startswith("y"):
           print("ok, carry on then")
-            #game continue rhegi. call that game function
+          menu()  #game continue. call that game function
     elif answer.lower().startswith("n"):
           print("ok, goodbye")
           exit()
