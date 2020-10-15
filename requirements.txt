@@ -1,0 +1,1 @@
+-e git+https://github.com/Overnight-Sensations/SoloG.git@e28c2424c416a6e7644e95b81d19cb630da9e88e#egg=SoloG
