@@ -5,7 +5,12 @@ import numpy as np
 import pandas as pd
 import random as rn
 import time
+from .game_over import game_over
+from .run import run
 
+
+score = 0 # Total score
+h = 3  # Total Help
 
 def question_number(l,n):
     j=rn.randint(0,n-1)
@@ -57,7 +62,8 @@ def play(q,h1,h2):
         elif ans=='qt':
             exit()
         elif ans=='hm':
-            pass #home function
+            run()
+             #home function
         elif ans=='hp':
             if flg==0:
                 if h>0:
@@ -80,19 +86,8 @@ def play(q,h1,h2):
     if tries==0:
         print("Out of tries")
         print('You Loose')
-        print('Total Score:',score)
-        quit()
-        #home function
+        game_over()
         
-        
-        
-            
-            
-        
-
-
-# In[ ]:
-
 
 def show(q,h1,h2):
     vowels=['a','e','i','o','u','A','E','I','O','U','/','-']
@@ -115,13 +110,6 @@ def show(q,h1,h2):
         print()
     play(q,h1,h2)
    
-    
-    
-    
-
-
-# In[ ]:
-
 
 def game_play(n,film,star,dt):
     l=[]
@@ -136,32 +124,20 @@ def game_play(n,film,star,dt):
         quest =film[s][0]    
         show(quest.lower(),star[s][0],dt[s][0])
         score+=10
-        
 
 
-# In[ ]:
-
-
-def hollywood_easy():
-    df=pd.read_csv('C:\\Users\sudee\OneDrive\Desktop\Hollywood-Easy.csv')
-    df.head()
+def hollywood_hard():
+    df=pd.read_csv('solog\filmanza\questions\Hollywood-hard.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
     game_play(n,movie_name,star_cast,release)
-    hollywood_medium()
-    
-
-        
-
-
-# In[ ]:
-
+    game_over()
+    #game finishded    
 
 def hollywood_medium():
-    df=pd.read_csv('C:\\Users\sudee\OneDrive\Desktop\Hollywood-medium.csv')
-    df.head()
+    df=pd.read_csv('solog\filmanza\questions\Hollywood-medium.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
@@ -170,28 +146,36 @@ def hollywood_medium():
     hollywood_hard()
     
 
-
-# In[ ]:
-
-
-def hollywood_hard():
-    df=pd.read_csv('C:\\Users\sudee\OneDrive\Desktop\Hollywood-hard.csv')
-    df.head()
+def hollywood_easy():
+    df=pd.read_csv('solog\filmanza\questions\Hollywood-Easy.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
     game_play(n,movie_name,star_cast,release)
-    #game finishded
+    hollywood_medium()
     
+def bollywood_hard():
+    df=pd.read_csv('solog\filmanza\questions\bollywood-hard.csv')
+    movie_name=np.asanyarray(df[['Name']])
+    star_cast=np.asanyarray(df[['Starcast']])
+    release=np.asanyarray(df[['Year']])
+    n=len(movie_name)
+    game_play(n,movie_name,star_cast,release)
+    game_over()
+    #game finished()
 
-
-# In[ ]:
-
+ def bollywood_medium():
+    df=pd.read_csv('solog\filmanza\questions\Bollywood-medium.csv')
+    movie_name=np.asanyarray(df[['Name']])
+    star_cast=np.asanyarray(df[['Starcast']])
+    release=np.asanyarray(df[['Year']])
+    n=len(movie_name)
+    game_play(n,movie_name,star_cast,release)
+    bollywood_hard()   
 
 def bollywood_easy():
-    df=pd.read_csv('C:\\Users\sudee\OneDrive\Desktop\Bollywood-easy.csv')
-    df.head()
+    df=pd.read_csv('solog\filmanza\questions\Bollywood-easy.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
@@ -200,60 +184,6 @@ def bollywood_easy():
     bollywood_medium()
 
 
-# In[ ]:
-
-
-def bollywood_medium():
-    df=pd.read_csv('C:\\Users\sudee\OneDrive\Desktop\Bollywood-medium.csv')
-    df.head()
-    movie_name=np.asanyarray(df[['Name']])
-    star_cast=np.asanyarray(df[['Starcast']])
-    release=np.asanyarray(df[['Year']])
-    n=len(movie_name)
-    game_play(n,movie_name,star_cast,release)
-    bollywood_hard()
-
-
-# In[ ]:
-
-
-def bollywood_hard():
-    df=pd.read_csv('C:\\Users\sudee\OneDrive\Desktop\bollywood-hard.csv')
-    df.head()
-    movie_name=np.asanyarray(df[['Name']])
-    star_cast=np.asanyarray(df[['Starcast']])
-    release=np.asanyarray(df[['Year']])
-    n=len(movie_name)
-    game_play(n,movie_name,star_cast,release)
-    #game finished()
-
-
-# In[ ]:
-
-
-h=3
-score=0
-
-
-# In[ ]:
-
-
-bollywood_easy()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
