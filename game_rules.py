@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[7]:
-
-
 def game_rules():
     print("                       Welcome to FILMANZA               ")
     print(" \n    Here are some rules which is important to go through for this game")
@@ -14,16 +11,3 @@ def game_rules():
     print(" 4. If you are unable to answer the question in 5 tries then unluckily you are out of the game.")
     print(" 5. Now you can proceed to the game.\n")
     print("                       Have a good time!!")
-
-
-# In[8]:
-
-
-game_rules()
-
-
-# In[ ]:
-
-
-
-
