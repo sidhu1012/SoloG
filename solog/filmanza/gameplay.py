@@ -86,7 +86,7 @@ def play(q,h1,h2):
     if tries==0:
         print("Out of tries")
         print('You Loose')
-        game_over()
+        game_over(score)
         
 
 def show(q,h1,h2):
@@ -133,7 +133,7 @@ def hollywood_hard():
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
     game_play(n,movie_name,star_cast,release)
-    game_over()
+    game_over(score)
     #game finishded    
 
 def hollywood_medium():
@@ -162,7 +162,7 @@ def bollywood_hard():
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
     game_play(n,movie_name,star_cast,release)
-    game_over()
+    game_over(score)
     #game finished()
 
 def bollywood_medium():
