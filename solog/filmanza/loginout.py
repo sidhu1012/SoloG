@@ -43,7 +43,7 @@ def newUser_password(createLogin):
             users[createLogin]=createPassw
             print("\n User created")    
         else:
-            newUser_password()    
+            newUser_password(users)    
 
 
 def newUser():

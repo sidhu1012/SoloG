@@ -67,7 +67,7 @@ def play(q,h1,h2):
         elif ans=='hp':
             if flg==0:
                 if h>0:
-                    hlp(h1,h2)
+                    help(h1,h2)
                     h-=1
                     flg+=1
                     continue
