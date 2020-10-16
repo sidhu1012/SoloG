@@ -84,9 +84,12 @@ def play(q,h1,h2):
             break
         #compare strings to break loop
     if tries==0:
+        from solog.filmanza.run import run
         print("Out of tries")
         print('You Loose')
         game_over(score)
+        run()
+
         
 
 def show(q,h1,h2):
