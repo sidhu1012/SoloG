@@ -1,1 +1,7 @@
--e git+https://github.com/Overnight-Sensations/SoloG.git@e28c2424c416a6e7644e95b81d19cb630da9e88e#egg=SoloG
+colorama>=0.4.4
+numpy>=1.19.2
+pandas>=1.1.3
+python-dateutil>=2.8.1
+pytz>=2020.1
+six>=1.15.0
+-e git+https://github.com/sidhu1012/SoloG.git@bcbadfe0b6b0f90b8d72ed2d4ae8cba0b5b844d6#egg=SoloG
