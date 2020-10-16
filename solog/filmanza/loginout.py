@@ -1,15 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
-from .menu import menu
+from solog.filmanza.menu import menu
 
 users = {}
-status = ""
-count=0
-SpecialSym =['$', '@', '#', '%'] 
-val=True
- 
 def displayMenu():
-    status = input("Are you registered user? y/n? Press q to quit")
+    status = input("\nAre you registered user? y/n? Press q to quit : ")
     if status == "y":
         oldUser()
     elif status == "n":
@@ -17,7 +12,9 @@ def displayMenu():
     if status == "q":
         exit()
 
-def newUser_password():
+def newUser_password(createLogin):
+        val = True
+        SpecialSym =['$', '@', '#', '%'] 
         createPassw = input("Create password: ")
         if len(createPassw) < 6: 
             print('length should be at least 6') 
@@ -40,21 +37,22 @@ def newUser_password():
             val = False
 
         if not any(char in SpecialSym for char in createPassw): 
-            print('Password should have at least one of the symbols $@#') 
+            print('Password should have at least one of the symbols $, @, #') 
             val = False
         if val: 
             users[createLogin]=createPassw
-            print("\n User created")        
+            print("\n User created")    
+        else:
+            newUser_password()    
 
 
 def newUser():
-    val=True
     createLogin = input("Create login name: ")
  
     if createLogin in users:
         print("\nLogin name already exist!\n")
         newUser()
-    newUser_password()
+    newUser_password(createLogin)
 
 
 def oldUser():
@@ -65,6 +63,7 @@ def oldUser():
         print("\nLogin successful!\n")
     else:
         print("\nUser doesn't exist or wrong password!\n")
+        displayMenu()
 
 
 def logout():

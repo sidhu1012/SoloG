@@ -15,8 +15,7 @@ def print_body():
         print(i,end='\t')
     time.sleep(5)   
 
-    print(f"{Fore.BLUE}{Style.BRIGHT} 1.BOLLYWOOD\n\n {Fore.BLUE}{Style.BRIGHT}2.HOLLYWOOD\n\n{Fore.MAGENTA}{Style.BRIGHT}PRESS 1 FOR BOLLYWOOD\n\n{Fore.MAGENTA}{Style.BRIGHT}PRESS 2 FOR HOLLYWOOD\n\n{Fore.BLUE}{Style.BRIGHT}INPUT:  ")
-    print(f"{Fore.BLUE}{Style.BRIGHT}M O D E S:\n\n {Fore.YELLOW}{Style.BRIGHT} \tEASY\n\n {Fore.GREEN}{Style.BRIGHT} \t\tMEDIUM\n\n {Fore.CYAN}{Style.BRIGHT} \t\t\t\tHARD")
+    print(f"{Fore.BLUE}{Style.BRIGHT}\n\nM O D E S:\n\n {Fore.YELLOW}{Style.BRIGHT} \tEASY\n\n {Fore.GREEN}{Style.BRIGHT} \t\tMEDIUM\n\n {Fore.CYAN}{Style.BRIGHT} \t\t\t\tHARD")
     a='LOADING.....'
     print(f"{Fore.MAGENTA}{Style.BRIGHT}")
     print("\n")

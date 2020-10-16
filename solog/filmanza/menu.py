@@ -1,4 +1,4 @@
-from .gameplay import hollywood_medium, bollywood_medium, bollywood_hard, hollywood_hard, hollywood_easy, bollywood_easy
+from solog.filmanza.gameplay import hollywood_medium, bollywood_medium, bollywood_hard, hollywood_hard, hollywood_easy, bollywood_easy
 
 def game_level():
     print("\t\t\tSelect Difficulty")
@@ -12,7 +12,7 @@ def game_level():
         game_level()
     return lvl
 
-def game_type()
+def game_type():
     print("Press '1' for Bollywood ")
     print("Press '2' for Hollywood")
     choice_type = int(input())

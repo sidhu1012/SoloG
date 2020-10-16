@@ -5,8 +5,7 @@ import numpy as np
 import pandas as pd
 import random as rn
 import time
-from .game_over import game_over
-from .run import run
+from solog.filmanza.game_over import game_over
 
 
 score = 0 # Total score
@@ -62,6 +61,7 @@ def play(q,h1,h2):
         elif ans=='qt':
             exit()
         elif ans=='hm':
+            from solog.filmanza.run import run
             run()
              #home function
         elif ans=='hp':
@@ -165,7 +165,7 @@ def bollywood_hard():
     game_over()
     #game finished()
 
- def bollywood_medium():
+def bollywood_medium():
     df=pd.read_csv('solog\filmanza\questions\Bollywood-medium.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Starcast']])
@@ -175,16 +175,10 @@ def bollywood_hard():
     bollywood_hard()   
 
 def bollywood_easy():
-    df=pd.read_csv('solog\filmanza\questions\Bollywood-easy.csv')
+    df=pd.read_csv('SoloG\solog\filmanza\questions\Bollywood-easy.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
     n=len(movie_name)
     game_play(n,movie_name,star_cast,release)
     bollywood_medium()
-
-
-
-
-
-
