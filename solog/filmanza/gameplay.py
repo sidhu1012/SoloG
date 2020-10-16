@@ -127,7 +127,7 @@ def game_play(n,film,star,dt):
 
 
 def hollywood_hard():
-    df=pd.read_csv('solog\filmanza\questions\Hollywood-hard.csv')
+    df=pd.read_csv('https://raw.githubusercontent.com/Overnight-Sensations/SoloG/master/Files/Filmanza/Hollywood-hard.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
@@ -137,7 +137,7 @@ def hollywood_hard():
     #game finishded    
 
 def hollywood_medium():
-    df=pd.read_csv('solog\filmanza\questions\Hollywood-medium.csv')
+    df=pd.read_csv('https://raw.githubusercontent.com/Overnight-Sensations/SoloG/master/Files/Filmanza/Hollywood-medium.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
@@ -147,7 +147,7 @@ def hollywood_medium():
     
 
 def hollywood_easy():
-    df=pd.read_csv('solog\filmanza\questions\Hollywood-Easy.csv')
+    df=pd.read_csv('https://raw.githubusercontent.com/Overnight-Sensations/SoloG/master/Files/Filmanza/Hollywood-Easy.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Star Cast']])
     release=np.asanyarray(df[['Year']])
@@ -156,7 +156,7 @@ def hollywood_easy():
     hollywood_medium()
     
 def bollywood_hard():
-    df=pd.read_csv('solog\filmanza\questions\bollywood-hard.csv')
+    df=pd.read_csv('https://raw.githubusercontent.com/Overnight-Sensations/SoloG/master/Files/Filmanza/bollywood-hard.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
@@ -166,7 +166,7 @@ def bollywood_hard():
     #game finished()
 
 def bollywood_medium():
-    df=pd.read_csv('solog\filmanza\questions\Bollywood-medium.csv')
+    df=pd.read_csv('https://raw.githubusercontent.com/Overnight-Sensations/SoloG/master/Files/Filmanza/Bollywood-medium.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
@@ -175,7 +175,7 @@ def bollywood_medium():
     bollywood_hard()   
 
 def bollywood_easy():
-    df=pd.read_csv('SoloG\solog\filmanza\questions\Bollywood-easy.csv')
+    df=pd.read_csv('https://raw.githubusercontent.com/Overnight-Sensations/SoloG/master/Files/Filmanza/Bollywood-easy.csv')
     movie_name=np.asanyarray(df[['Name']])
     star_cast=np.asanyarray(df[['Starcast']])
     release=np.asanyarray(df[['Year']])
